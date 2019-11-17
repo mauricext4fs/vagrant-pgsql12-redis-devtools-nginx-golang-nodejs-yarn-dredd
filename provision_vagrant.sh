@@ -43,7 +43,6 @@ sudo yarn global add dredd
 
 # Add bind volume for Nginx
 sudo yum install -y nginx
-echo "/home/vagrant/cig/root/etc/nginx/public_html   /var/www/html     none    bind                      0       0" >> /etc/fstab
 sudo mkdir -p /var/www/html
 
 
