@@ -46,13 +46,14 @@ curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
 yum install -y nodejs
 # Install latest yarn
 echo "Installing Yarn"
-curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
-cp /root/.yarn/bin/yarn /usr/local/bin/
-yarn global add dredd
+curl --compressed -o- -L https://yarnpkg.com/install.sh | sudo su vagrant -c 'bash'
+sudo su vagrant -c '~/.yarn/bin/yarn global add dredd'
 
 # Add bind volume for Nginx
 echo "Install Nginx"
 yum install -y nginx
 mkdir -p /var/www/html
 
+# Add all necessary package for UI test
+yum install -y pango libXcomposite libXcursor libXdamage libXext libXi libXtst cups-libs libXScrnSaver libXrandr GConf2 alsa-lib atk gtk3 ipa-gothic-fonts xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-utils xorg-x11-fonts-cyrillic xorg-x11-fonts-Type1 xorg-x11-fonts-misc firefox Chromium
 
