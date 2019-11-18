@@ -20,6 +20,7 @@ usermod -aG wheel vagrant
 # Install PostgreSQL
 echo "Install PostgreSQL"
 yum update && yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+yum-config-manager --enable pgdg12
 yum install -y postgresql12 postgresql12-server
 /usr/pgsql-12/bin/postgresql-12-setup initdb
 systemctl enable postgresql-12
