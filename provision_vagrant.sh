@@ -16,6 +16,9 @@ echo "      - Change sudoers permission"
 chmod go-rwx /etc/sudoers
 cd /home/vagrant
 usermod -aG wheel vagrant
+echo "ClientAliveInterval 0" >> /etc/ssh/sshd_config
+echo "TCPKeepAlive no" >> /etc/ssh/sshd_config
+echo "ClientAliveCountMax 240" >> /etc/ssh/sshd_config
 
 # Install PostgreSQL
 echo "Install PostgreSQL"
